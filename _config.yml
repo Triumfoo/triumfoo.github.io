@@ -53,8 +53,9 @@ sections:
         organization: Electronics and Telecommunications Research Institute (ETRI)
         role: Project Member
         description: Extracted and preprocessed battlefield simulation data using VT MAK.
-      - title: Lightweight Reasoning Model for Ultra-Large AI-Based Battlefield Situational Awareness and Inference
+      - title: Development and Optimization of Large-Scale AI Reasoning Models for Complex Battlefield Situations
         period: Oct. 2025 – Mar. 2026
+        organization: Electronics and Telecommunications Research Institute (ETRI)
         role: Project Member
         description: Conducted preliminary fine-tuning of LLMs using battlefield data for military situational reasoning.
   - id: education
@@ -70,12 +71,12 @@ sections:
           - Investigated reinforcement learning approaches to improve search efficiency and decision-making in agentic RAG.
           - Designed a step-wise search utility reward and a structured reasoning process to enhance reasoning performance.
       - title: Dalian University of Technology
-        period: Sep. 2020 – Jan. 2024
+        period: Sep. 2020 – Jun. 2024
         organization: Dalian, China
         description: B.S. in Electronic Information Engineering (English Intensive)
         details:
           - 985 Project university.
-          - "Relevant coursework — Principles of Communication, Signals and Systems, Digital Signal Processing"
+          - "Relevant coursework — Principle of Communication, Signals and Systems, Digital Signal Processing"
   - id: experience
     title: Experience
     label: Experience
