@@ -6,6 +6,13 @@ lang: en
 timezone: Asia/Seoul
 markdown: kramdown
 exclude: [README.md, Gemfile, Gemfile.lock]
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /blog/:year/:month/:day/:title/
 
 profile:
   name: HanZhong Seo
@@ -113,3 +120,6 @@ sections:
         description: Native
       - title: English
         description: Professional working proficiency, IELTS 7.0
+  - id: blog
+    title: Blog
+    label: Blog
