@@ -50,7 +50,21 @@
       {% for section in site.sections %}
       <section id="{{ section.id | escape }}" aria-labelledby="{{ section.id | escape }}-heading">
         <h2 id="{{ section.id | escape }}-heading">{{ section.title | escape }}</h2>
-        {% if section.items.size > 0 %}
+        {% if section.id == 'blog' %}
+        <ul class="entry-list">
+          {% for post in site.posts %}
+          <li class="entry">
+            <time class="period" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b. %d, %Y' }}</time>
+            <div class="entry-body">
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+              <p>{{ post.excerpt | strip_html | truncatewords: 35 | escape }}</p>
+            </div>
+          </li>
+          {% else %}
+          <li class="empty">No posts yet.</li>
+          {% endfor %}
+        </ul>
+        {% elsif section.items.size > 0 %}
         <ul class="entry-list">
           {% for item in section.items %}
           <li class="entry">
