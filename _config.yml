@@ -1,0 +1,50 @@
+title: Triumfoo
+description: Triumfoo의 개인 홈페이지
+url: https://triumfoo.github.io
+baseurl: ""
+lang: ko
+timezone: Asia/Seoul
+markdown: kramdown
+exclude: [README.md, Gemfile, Gemfile.lock]
+
+profile:
+  name: Triumfoo
+  initials: T
+  position: ""
+  affiliation: ""
+  photo: ""
+  email: ""
+  location: ""
+  links:
+    - label: GitHub
+      url: https://github.com/Triumfoo
+
+about: |
+  안녕하세요, Triumfoo입니다. 개인 소개와 연구, 프로젝트를 정리하는 홈페이지입니다.
+  자세한 소개를 준비하고 있습니다.
+
+sections:
+  - id: interests
+    title: Research Interests
+    label: 연구 분야
+    items: []
+  - id: publications
+    title: Publications
+    label: 논문
+    items: []
+  - id: projects
+    title: Projects
+    label: 프로젝트
+    items: []
+  - id: education
+    title: Education
+    label: 학력
+    items: []
+  - id: experience
+    title: Experience
+    label: 경력
+    items: []
+  - id: awards
+    title: Honors & Awards
+    label: 수상
+    items: []
