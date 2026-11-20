@@ -1,7 +1,7 @@
 ---
 ---
 <!doctype html>
-<html lang="{{ site.lang | default: 'ko' }}">
+<html lang="{{ site.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,23 +11,22 @@
   <link rel="stylesheet" href="{{ '/site.css' | relative_url }}">
 </head>
 <body>
-  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
       <a class="home-link" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
-      <nav aria-label="페이지 내 탐색">
+      <nav aria-label="Page navigation">
         <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
+        {% for section in site.sections %}
+        <a href="#{{ section.id | escape }}">{{ section.title | escape }}</a>
+        {% endfor %}
       </nav>
     </div>
   </header>
   <div class="page-layout">
-    <aside class="profile" aria-label="프로필">
+    <aside class="profile" aria-label="Profile">
       {% if site.profile.photo != '' %}
-      <img class="portrait" src="{{ site.profile.photo | relative_url }}" alt="{{ site.profile.name | escape }} 프로필 사진" width="168" height="168">
+      <img class="portrait" src="{{ site.profile.photo | relative_url }}" alt="Portrait of {{ site.profile.name | escape }}" width="168" height="168">
       {% else %}
       <div class="portrait monogram" aria-hidden="true">{{ site.profile.initials | escape }}</div>
       {% endif %}
@@ -38,6 +37,7 @@
         {% if site.profile.location != '' %}<p class="location">{{ site.profile.location | escape }}</p>{% endif %}
         <ul class="profile-links">
           {% if site.profile.email != '' %}<li><a href="mailto:{{ site.profile.email | escape }}">{{ site.profile.email | escape }}</a></li>{% endif %}
+          {% if site.profile.phone %}<li><a href="tel:{{ site.profile.phone | remove: ' ' | remove: '-' | escape }}">{{ site.profile.phone | escape }}</a></li>{% endif %}
           {% for link in site.profile.links %}<li><a href="{{ link.url | escape }}">{{ link.label | escape }}</a></li>{% endfor %}
         </ul>
       </div>
@@ -59,20 +59,22 @@
               <h3>{% if item.url %}<a href="{{ item.url | escape }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3>
               {% if item.authors %}<p>{{ item.authors | escape }}</p>{% endif %}
               {% if item.organization %}<p class="organization">{{ item.organization | escape }}</p>{% endif %}
+              {% if item.role %}<p>{{ item.role | escape }}</p>{% endif %}
               {% if item.description %}<p>{{ item.description | escape }}</p>{% endif %}
+              {% if item.details.size > 0 %}<ul class="entry-details">{% for detail in item.details %}<li>{{ detail | escape }}</li>{% endfor %}</ul>{% endif %}
               {% if item.links.size > 0 %}<ul class="entry-links">{% for link in item.links %}<li><a href="{{ link.url | escape }}">{{ link.label | escape }}</a></li>{% endfor %}</ul>{% endif %}
             </div>
           </li>
           {% endfor %}
         </ul>
         {% else %}
-        <p class="empty">{{ section.label | escape }} 내용을 준비하고 있습니다.</p>
+        <p class="empty">{{ section.label | escape }} will be added soon.</p>
         {% endif %}
       </section>
       {% endfor %}
       <footer>
         <span>© {{ site.time | date: '%Y' }} {{ site.profile.name | escape }}</span>
-        <a href="#about">맨 위로</a>
+        <a href="#about">Back to top</a>
       </footer>
     </main>
   </div>
