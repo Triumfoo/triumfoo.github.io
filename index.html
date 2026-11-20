@@ -1,0 +1,80 @@
+---
+---
+<!doctype html>
+<html lang="{{ site.lang | default: 'ko' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description | escape }}">
+  <title>{{ site.title | escape }} | Homepage</title>
+  <link rel="canonical" href="{{ '/' | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/site.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="home-link" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+      <nav aria-label="페이지 내 탐색">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+      </nav>
+    </div>
+  </header>
+  <div class="page-layout">
+    <aside class="profile" aria-label="프로필">
+      {% if site.profile.photo != '' %}
+      <img class="portrait" src="{{ site.profile.photo | relative_url }}" alt="{{ site.profile.name | escape }} 프로필 사진" width="168" height="168">
+      {% else %}
+      <div class="portrait monogram" aria-hidden="true">{{ site.profile.initials | escape }}</div>
+      {% endif %}
+      <div class="profile-info">
+        <h1>{{ site.profile.name | escape }}</h1>
+        {% if site.profile.position != '' %}<p class="position">{{ site.profile.position | escape }}</p>{% endif %}
+        {% if site.profile.affiliation != '' %}<p>{{ site.profile.affiliation | escape }}</p>{% endif %}
+        {% if site.profile.location != '' %}<p class="location">{{ site.profile.location | escape }}</p>{% endif %}
+        <ul class="profile-links">
+          {% if site.profile.email != '' %}<li><a href="mailto:{{ site.profile.email | escape }}">{{ site.profile.email | escape }}</a></li>{% endif %}
+          {% for link in site.profile.links %}<li><a href="{{ link.url | escape }}">{{ link.label | escape }}</a></li>{% endfor %}
+        </ul>
+      </div>
+    </aside>
+    <main id="main">
+      <section id="about" class="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <div class="intro">{{ site.about | markdownify }}</div>
+      </section>
+      {% for section in site.sections %}
+      <section id="{{ section.id | escape }}" aria-labelledby="{{ section.id | escape }}-heading">
+        <h2 id="{{ section.id | escape }}-heading">{{ section.title | escape }}</h2>
+        {% if section.items.size > 0 %}
+        <ul class="entry-list">
+          {% for item in section.items %}
+          <li class="entry">
+            {% if item.period %}<span class="period">{{ item.period | escape }}</span>{% endif %}
+            <div class="entry-body">
+              <h3>{% if item.url %}<a href="{{ item.url | escape }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3>
+              {% if item.authors %}<p>{{ item.authors | escape }}</p>{% endif %}
+              {% if item.organization %}<p class="organization">{{ item.organization | escape }}</p>{% endif %}
+              {% if item.description %}<p>{{ item.description | escape }}</p>{% endif %}
+              {% if item.links.size > 0 %}<ul class="entry-links">{% for link in item.links %}<li><a href="{{ link.url | escape }}">{{ link.label | escape }}</a></li>{% endfor %}</ul>{% endif %}
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="empty">{{ section.label | escape }} 내용을 준비하고 있습니다.</p>
+        {% endif %}
+      </section>
+      {% endfor %}
+      <footer>
+        <span>© {{ site.time | date: '%Y' }} {{ site.profile.name | escape }}</span>
+        <a href="#about">맨 위로</a>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
