@@ -1,50 +1,114 @@
-title: Triumfoo
-description: Triumfoo의 개인 홈페이지
+title: HanZhong Seo
+description: HanZhong Seo's academic homepage. Research in AI-native networks, vision-language-action, and reinforcement learning.
 url: https://triumfoo.github.io
 baseurl: ""
-lang: ko
+lang: en
 timezone: Asia/Seoul
 markdown: kramdown
 exclude: [README.md, Gemfile, Gemfile.lock]
 
 profile:
-  name: Triumfoo
-  initials: T
-  position: ""
-  affiliation: ""
+  name: HanZhong Seo
+  initials: HS
+  position: M.S. Student in Artificial Intelligence
+  affiliation: Konkuk University
   photo: ""
-  email: ""
-  location: ""
+  email: hzseo96@gmail.com
+  phone: "+82 10-2730-1806"
+  location: Seoul, Republic of Korea
   links:
     - label: GitHub
       url: https://github.com/Triumfoo
 
 about: |
-  안녕하세요, Triumfoo입니다. 개인 소개와 연구, 프로젝트를 정리하는 홈페이지입니다.
-  자세한 소개를 준비하고 있습니다.
+  Hello! I am HanZhong Seo, an M.S. student in Artificial Intelligence at Konkuk University.
+  My research interests include AI-native networks, vision-language-action, and reinforcement learning.
+
+  My thesis, *SURAG: Step-wise Search Utility Reward for Efficient Agentic RAG*, investigates
+  reinforcement learning approaches to improve search efficiency and decision-making in agentic RAG.
+  I designed a step-wise search utility reward and a structured reasoning process to enhance reasoning performance.
+
+  I received my B.S. in Electronic Information Engineering from Dalian University of Technology.
+  My project experience includes preprocessing battlefield simulation data and fine-tuning large language models
+  for military situational reasoning.
 
 sections:
   - id: interests
     title: Research Interests
-    label: 연구 분야
-    items: []
+    label: Research interests
+    items:
+      - title: AI-Native Networks
+      - title: Vision-Language-Action
+      - title: Reinforcement Learning
   - id: publications
     title: Publications
-    label: 논문
+    label: Publications
     items: []
   - id: projects
-    title: Projects
-    label: 프로젝트
-    items: []
+    title: Research Projects
+    label: Research projects
+    items:
+      - title: LLM-Based MUM-T Situational Awareness Knowledge Generation
+        period: May 2025 – Sep. 2025
+        organization: Electronics and Telecommunications Research Institute (ETRI)
+        role: Project Member
+        description: Extracted and preprocessed battlefield simulation data using VT MAK.
+      - title: Lightweight Reasoning Model for Ultra-Large AI-Based Battlefield Situational Awareness and Inference
+        period: Oct. 2025 – Mar. 2026
+        role: Project Member
+        description: Conducted preliminary fine-tuning of LLMs using battlefield data for military situational reasoning.
   - id: education
     title: Education
-    label: 학력
-    items: []
+    label: Education
+    items:
+      - title: Konkuk University
+        period: Mar. 2025 – Present
+        organization: Seoul, Republic of Korea
+        description: M.S. in Artificial Intelligence
+        details:
+          - "Thesis — SURAG: Step-wise Search Utility Reward for Efficient Agentic RAG"
+          - Investigated reinforcement learning approaches to improve search efficiency and decision-making in agentic RAG.
+          - Designed a step-wise search utility reward and a structured reasoning process to enhance reasoning performance.
+      - title: Dalian University of Technology
+        period: Sep. 2020 – Jan. 2024
+        organization: Dalian, China
+        description: B.S. in Electronic Information Engineering (English Intensive)
+        details:
+          - 985 Project university.
+          - "Relevant coursework — Principles of Communication, Signals and Systems, Digital Signal Processing"
   - id: experience
     title: Experience
-    label: 경력
+    label: Experience
     items: []
   - id: awards
     title: Honors & Awards
-    label: 수상
-    items: []
+    label: Honors and awards
+    items:
+      - title: Second Prize, Grade Scholarship
+        organization: Dalian University of Technology
+      - title: Teaching Assistant Scholarship
+        organization: Konkuk University
+      - title: Academic Excellence Scholarship
+        organization: Konkuk University
+  - id: skills
+    title: Skills
+    label: Skills
+    items:
+      - title: Programming
+        description: Python
+      - title: Deep Learning
+        description: PyTorch, Hugging Face Transformers
+      - title: Reinforcement Learning
+        description: verl
+      - title: LLM Inference
+        description: vLLM
+  - id: languages
+    title: Languages
+    label: Languages
+    items:
+      - title: Korean
+        description: Native
+      - title: Chinese
+        description: Native
+      - title: English
+        description: Professional working proficiency, IELTS 7.0
