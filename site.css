@@ -1,0 +1,76 @@
+:root {
+  color-scheme: light;
+  --ink: #252e3a;
+  --muted: #606974;
+  --accent: #285e79;
+  --rule: #dce2e8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  background: #fff;
+  color: var(--ink);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+p, h1, h2, h3 { margin: 0; }
+.skip { position: absolute; top: -5rem; left: 1rem; padding: 0.6rem 1rem; background: white; z-index: 5; }
+.skip:focus { top: 1rem; }
+.site-header { border-bottom: 1px solid var(--rule); background: #fcfdfe; }
+.header-inner { max-width: 70rem; padding: 1rem 1.5rem; margin: auto; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem 2rem; }
+.home-link { color: var(--ink); font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 0.3rem 1.6rem; }
+nav a { font-size: 0.9rem; text-decoration: none; color: #485766; }
+.page-layout { max-width: 70rem; margin: 3rem auto 0; padding-inline: 1.5rem; display: grid; grid-template-columns: 13.5rem minmax(0, 1fr); gap: 4rem; align-items: start; }
+.profile { position: sticky; top: 2rem; }
+.portrait { display: block; width: 10.5rem; height: 10.5rem; object-fit: cover; border-radius: 50%; border: 1px solid var(--rule); margin-bottom: 1.1rem; }
+.monogram { display: grid; place-items: center; color: var(--accent); background: #f0f5f8; font-family: Georgia, serif; font-size: 3.8rem; }
+.profile h1 { font-size: 1.5rem; line-height: 1.35; margin-bottom: 0.45rem; letter-spacing: -0.025em; overflow-wrap: anywhere; }
+.profile p { font-size: 0.95rem; color: var(--muted); line-height: 1.65; }
+.profile .position { color: var(--ink); }
+.profile .location { margin-top: 0.7rem; }
+.profile-links, .entry-list, .entry-links { list-style: none; padding: 0; margin: 0; }
+.profile-links { margin-top: 1rem; font-size: 0.95rem; }
+.profile-links li { margin-bottom: 0.25rem; overflow-wrap: anywhere; }
+.profile-links a { text-decoration: none; }
+main { min-width: 0; }
+section { margin-bottom: 2.6rem; scroll-margin-top: 1.5rem; }
+h2 { border-bottom: 1px solid var(--rule); padding-bottom: 0.5rem; margin-bottom: 0.95rem; font-size: 1.5rem; line-height: 1.4; font-family: Georgia, 'Times New Roman', serif; font-weight: 600; letter-spacing: -0.02em; }
+.about h2 { padding-top: 0.1rem; }
+.intro p { margin-bottom: 0.85rem; }
+.intro { word-break: keep-all; overflow-wrap: anywhere; }
+.entry { display: flex; align-items: baseline; gap: 0.7rem 1.2rem; padding: 0.35rem 0 1.2rem; }
+.period { flex: 0 0 7rem; color: var(--muted); font-size: 0.9rem; }
+.entry-body { min-width: 0; }
+.entry h3 { font-size: 1rem; font-weight: 650; line-height: 1.6; }
+.entry h3 a { text-decoration: none; }
+.entry p { margin-top: 0.15rem; font-size: 0.95rem; }
+.entry .organization { color: var(--muted); font-style: italic; }
+.entry-links { display: flex; flex-wrap: wrap; gap: 0.8rem; font-size: 0.9rem; margin-top: 0.35rem; }
+.empty { color: var(--muted); font-size: 1rem; }
+footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.15rem 0 1.8rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.875rem; }
+@media (max-width: 50rem) {
+  .header-inner { flex-wrap: wrap; gap: 0.4rem; }
+  nav { width: 100%; gap: 0.25rem 1.15rem; }
+  .page-layout { grid-template-columns: 1fr; margin-top: 1.8rem; gap: 2rem; }
+  .profile { position: static; display: flex; align-items: center; gap: 1.3rem; }
+  .portrait { flex-shrink: 0; width: 7rem; height: 7rem; margin: 0; font-size: 3rem; }
+  .profile-links { margin-top: 0.5rem; }
+  .profile h1 { font-size: 1.4rem; }
+}
+@media (max-width: 30rem) {
+  .header-inner, .page-layout { padding-inline: 1.15rem; }
+  .profile { gap: 1rem; }
+  .portrait { width: 5.5rem; height: 5.5rem; }
+  .entry { flex-direction: column; gap: 0.1rem; }
+  .period { flex-basis: auto; }
+}
+@media print {
+  .site-header, .skip, footer a { display: none; }
+  .page-layout { display: block; margin-top: 0; }
+  .profile { position: static; margin-bottom: 2rem; }
+  .portrait { width: 6rem; height: 6rem; }
+  section { break-inside: avoid; }
+}
